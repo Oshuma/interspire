@@ -118,16 +118,10 @@ module Interspire
       end
     end
 
-    # TODO: Return an array of Interspire::Subscriber objects.
-    #
     # @param list_id [Integer] The ID of the contact list.
     # @param email [String] The domain (including '@') of subscribers to filter by; ex. '@example.com' would only return subscribers like 'foo@example.com'; defaults to an empty String (returns all subscribers).
     #
-    # @return [Hash] A Hash containing a +:count+ key and a +:subscribers+ Array that looks like this:
-    #   {
-    #     :subscriber_id => '1234',
-    #     :email => 'foo@example.com'
-    #   }
+    # @return [Hash] A Hash containing a +:count+ key and a +:subscribers+ Array with {Interspire::Subscriber} objects.
     def get_subscribers(list_id, email = '')
       xml = %Q[
         <xmlrequest>
@@ -153,10 +147,9 @@ module Interspire
 
         response.xpath('response/data').each do |data|
           data.xpath('subscriberlist/item').each do |item|
-            subscribers[:subscribers] << {
-              subscriber_id: item.xpath('subscriberid').first.content,
-              email: item.xpath('emailaddress').first.content
-            }
+            id = item.xpath('subscriberid').first.content.to_i
+            email = item.xpath('emailaddress').first.content
+            subscribers[:subscribers] << Interspire::Subscriber.new(id, email)
           end
         end
 

@@ -50,8 +50,10 @@ describe Interspire::API do
 
       # Make sure the required values are there:
       subscribers[:subscribers].each do |subscriber|
-        subscriber[:subscriber_id].should_not be_nil
-        subscriber[:email].should_not be_nil
+        subscriber.id.should_not be_nil
+        subscriber.id.should be_a(Integer)
+
+        subscriber.email.should_not be_nil
       end
     end
   end

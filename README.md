@@ -20,7 +20,20 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+The API class requires 3 parameters; the API URL of your Interspire installation, a username, and that username's token.
+This information can be found under the 'Users & Groups' menu on your Interspire installation.
+You might have to enable API access for the user.
+
+    api_url = 'http://example.com/xml.php'
+    user    = 'luser'
+    token   = 'some_valid_api_token'
+
+    api = Interspire::API.new(api_url, user, token)
+
+    # Get an array of Interspire::ContactList objects:
+    api.get_lists  # => [#<Interspire::ContactList:0x8bc6cb0 @id="7", @name="List Foo", ...
+
+See the {Interspire::API} class for documentation on the available methods.
 
 ## Contributing
 

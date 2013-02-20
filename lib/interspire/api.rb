@@ -2,6 +2,7 @@ require 'net/http'
 require 'nokogiri'
 
 module Interspire
+  # TODO: The methods expecting a list ID should also accept a ContactList object.
   class API
 
     # @param api_url [String] The XML API of your Interspire installation; ex. http://example.com/xml.php

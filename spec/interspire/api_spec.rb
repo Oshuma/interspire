@@ -57,9 +57,26 @@ describe Interspire::API do
   end
 
   context 'subscribers' do
-    it 'should add the subscriber'
-    it 'should delete the subscriber'
-    it 'should check if a subscriber is on a list'
+    it 'should add the subscriber' do
+      stub_request(:post, @api_url).to_return(:body => fixture("add_subscriber.xml"))
+      subscriber_id = @api.add_subscriber(1, 'foo@example.com')  # '1' is the (fake) contact list ID.
+      subscriber_id.should be_a(Integer)
+    end
+
+    it 'should delete the subscriber' do
+      stub_request(:post, @api_url).to_return(:body => fixture("delete_subscriber.xml"))
+      @api.delete_subscriber(1, 'foo@example.com').should be_true
+    end
+
+    it 'should be in contact list' do
+      stub_request(:post, @api_url).to_return(:body => fixture("in_contact_list.xml"))
+      @api.in_contact_list?(1, 'foo@example.com').should be_true
+    end
+
+    it 'should not be in contact list' do
+      stub_request(:post, @api_url).to_return(:body => fixture("not_in_contact_list.xml"))
+      @api.in_contact_list?(1, 'foo@example.com').should_not be_true
+    end
   end
 
 end

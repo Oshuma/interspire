@@ -1,6 +1,6 @@
 # Interspire
 
-TODO: Write a gem description
+Ruby library for the {http://www.interspire.com/ Interspire} {https://www.interspire.com/support/kb/questions/1224/Email+Marketer+XML+API+Documentation API}.
 
 ## Installation
 

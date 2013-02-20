@@ -1,6 +1,8 @@
 # Interspire
 
-Ruby library for the {http://www.interspire.com/ Interspire} {https://www.interspire.com/support/kb/questions/1224/Email+Marketer+XML+API+Documentation API}.
+Ruby library for the {http://www.interspire.com/ Interspire} API ({https://www.interspire.com/support/kb/questions/1224/Email+Marketer+XML+API+Documentation pdf}).
+
+See the {Interspire::API} class for detailed documentation.
 
 ## Installation
 

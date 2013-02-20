@@ -143,7 +143,7 @@ module Interspire
 
       if success?(response)
         subscribers = {}
-        subscribers[:count] = response.xpath('response/data/count').first.content
+        subscribers[:count] = response.xpath('response/data/count').first.content.to_i
         subscribers[:subscribers] = []
 
         response.xpath('response/data').each do |data|

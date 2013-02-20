@@ -47,6 +47,7 @@ describe Interspire::API do
 
       # Make sure there's a count.
       subscribers[:count].should_not be_nil
+      subscribers[:count].should be_a(Integer)
 
       # Make sure the required values are there:
       subscribers[:subscribers].each do |subscriber|

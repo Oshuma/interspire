@@ -9,8 +9,19 @@ describe Interspire::API do
   end
 
   context 'authentication' do
-    it 'should be authenticated'
-    it 'should not be authenticated'
+    it 'should be authenticated' do
+      stub_request(:post, @api_url).to_return(:body => fixture("authenticated.xml"))
+
+      @api = Interspire::API.new(@api_url, @user, @token)
+      @api.should be_authenticated  # @api.authenticated? should return true
+    end
+
+    it 'should not be authenticated' do
+      stub_request(:post, @api_url).to_return(:body => fixture("not_authenticated.xml"))
+
+      @api = Interspire::API.new(@api_url, @user, @token)
+      @api.should_not be_authenticated  # @api.authenticated? should return false
+    end
   end
 
   context 'lists' do

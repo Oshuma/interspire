@@ -1,4 +1,5 @@
 require "interspire/api"
+require "interspire/contact_list"
 require "interspire/interspire_exception"
 
 module Interspire

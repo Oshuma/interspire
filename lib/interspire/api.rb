@@ -85,16 +85,7 @@ module Interspire
       success?(response) ? true : error!(response)
     end
 
-    # TODO: Return an array of Interspire::ContactList objects.
-    #
-    # @return [Array] An Array of Hashes with contact list information that looks like this:
-    #   {
-    #     :id => '42',  # Contact list ID.
-    #     :name => 'Serious Contacts',
-    #     :subscribe_count => '6420',
-    #     :unsubscribe_count => '421',
-    #     :auto_responder_count => '124'
-    #   }
+    # @return [Array] An Array of {Interspire::ContactList} objects.
     def get_lists
       xml = %Q[
         <xmlrequest>
@@ -112,13 +103,13 @@ module Interspire
       if success?(response)
         lists = []
         response.xpath('response/data/item').each do |list|
-          lists << {
+          lists << Interspire::ContactList.new({
             id: list.xpath('listid').first.content,
             name: list.xpath('name').first.content,
             subscribe_count: list.xpath('subscribecount').first.content,
             unsubscribe_count: list.xpath('unsubscribecount').first.content,
             auto_responder_count: list.xpath('autorespondercount').first.content,
-          }
+          })
         end
 
         lists

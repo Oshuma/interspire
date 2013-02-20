@@ -32,11 +32,11 @@ describe Interspire::API do
 
       # Make sure each list has expected values:
       lists.each do |list|
-        list[:id].should_not be_nil
-        list[:name].should_not be_nil
-        list[:subscribe_count].should_not be_nil
-        list[:unsubscribe_count].should_not be_nil
-        list[:auto_responder_count].should_not be_nil
+        list.id.should_not be_nil
+        list.name.should_not be_nil
+        list.subscribe_count.should_not be_nil
+        list.unsubscribe_count.should_not be_nil
+        list.auto_responder_count.should_not be_nil
       end
     end
 

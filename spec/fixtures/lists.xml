@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<response>
+    <status>SUCCESS</status>
+    <data>
+        <item>
+            <listid>7</listid>
+            <name>Neighborhood Newsletter</name>
+            <ownername>Jane Doe</ownername>
+            <owneremail>jane.doe@example.com</owneremail>
+            <bounceemail>jane.doe@example.com</bounceemail>
+            <replytoemail>jane.doe@example.com</replytoemail>
+            <bounceserver></bounceserver>
+            <bounceusername></bounceusername>
+            <bouncepassword></bouncepassword>
+            <extramailsettings></extramailsettings>
+            <companyname>ExampleCorp</companyname>
+            <companyaddress>123 Main St, Anytown, FL 30635</companyaddress>
+            <companyphone></companyphone>
+            <format>b</format>
+            <notifyowner>1</notifyowner>
+            <imapaccount>0</imapaccount>
+            <createdate>1348502776</createdate>
+            <subscribecount>666</subscribecount>
+            <unsubscribecount>4</unsubscribecount>
+            <bouncecount>0</bouncecount>
+            <processbounce>0</processbounce>
+            <agreedelete>1</agreedelete>
+            <agreedeleteall>0</agreedeleteall>
+            <visiblefields>emailaddress,subscribedate,status,confirmed</visiblefields>
+            <ownerid>3</ownerid>
+            <autorespondercount></autorespondercount>
+        </item>
+
+        <item>
+            <listid>84</listid>
+            <name>Totes Bitchin Email List</name>
+            <ownername>John Doe</ownername>
+            <owneremail>john.doe@example.com</owneremail>
+            <bounceemail>john.doe@example.com</bounceemail>
+            <replytoemail>john.doe@example.com</replytoemail>
+            <bounceserver></bounceserver>
+            <bounceusername></bounceusername>
+            <bouncepassword></bouncepassword>
+            <extramailsettings></extramailsettings>
+            <companyname>ExampleCorp</companyname>
+            <companyaddress>123 Main St, Anytown, FL 30635</companyaddress>
+            <companyphone></companyphone>
+            <format>b</format>
+            <notifyowner>1</notifyowner>
+            <imapaccount>0</imapaccount>
+            <createdate>1348552776</createdate>
+            <subscribecount>12345</subscribecount>
+            <unsubscribecount>20</unsubscribecount>
+            <bouncecount>0</bouncecount>
+            <processbounce>0</processbounce>
+            <agreedelete>1</agreedelete>
+            <agreedeleteall>0</agreedeleteall>
+            <visiblefields>emailaddress,subscribedate,status,confirmed</visiblefields>
+            <ownerid>12</ownerid>
+            <autorespondercount></autorespondercount>
+        </item>
+    </data>
+</response>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<response>
+    <status>SUCCESS</status>
+    <data>
+        <count>2</count>
+        <subscriberlist>
+            <item>
+                <subscriberid>283206</subscriberid>
+                <emailaddress>jane.doe@example.com</emailaddress>
+                <format>h</format>
+                <subscribedate>1348602753</subscribedate>
+                <confirmed>1</confirmed>
+                <unsubscribed>0</unsubscribed>
+                <bounced>0</bounced>
+                <listid>8</listid>
+            </item>
+            <item>
+                <subscriberid>283207</subscriberid>
+                <emailaddress>john.doe@example.com</emailaddress>
+                <format>h</format>
+                <subscribedate>1348602763</subscribedate>
+                <confirmed>1</confirmed>
+                <unsubscribed>0</unsubscribed>
+                <bounced>0</bounced>
+                <listid>8</listid>
+            </item>
+        </subscriberlist>
+    </data>
+</response>

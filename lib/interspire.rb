@@ -1,3 +1,6 @@
+require 'net/http'
+require 'nokogiri'
+
 require "interspire/interspire_exception"
 require "interspire/version"
 

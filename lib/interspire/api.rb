@@ -1,5 +1,8 @@
-require 'net/http'
-require 'nokogiri'
+begin
+  require 'net/http'
+  require 'nokogiri'
+rescue LoadError
+end
 
 module Interspire
   # TODO: The methods expecting a list ID should also accept a ContactList object.

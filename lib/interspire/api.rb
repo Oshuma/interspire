@@ -27,7 +27,7 @@ module Interspire
     #
     # @return [Integer] Returns the subscriber's ID upon success.
     def add_subscriber(list_id, email, confirmed = false, format = 'html', custom_fields = {})
-      custom_fields_xml = custom_fields.map { |key, value| "<item><fieldid>#{key}</fieldid><value>#{value}</value></item>" }
+      custom_fields_xml = custom_fields.map { |key, value| "<item><fieldid>#{key}</fieldid><value>#{value}</value></item>" }.join
       
       xml = %Q[
         <xmlrequest>

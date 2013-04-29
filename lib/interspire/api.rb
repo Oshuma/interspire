@@ -23,9 +23,12 @@ module Interspire
     # @param email [String] The subscriber's email address.
     # @param confirmed [boolean] (optional) +true+ if the subscriber should be set as confirmed; defaults to +false+.
     # @param format [String] (optional) The email format; either +html+ or +text+; defaults to +html+.
+    # @param custom_fields [Hash] (optional) Any custom fields for the subscriber (e.g. {1 => 'Banana', 2 => 'Hamster'})
     #
     # @return [Integer] Returns the subscriber's ID upon success.
-    def add_subscriber(list_id, email, confirmed = false, format = 'html')
+    def add_subscriber(list_id, email, confirmed = false, format = 'html', custom_fields = {})
+      custom_fields_xml = custom_fields.map { |key, value| "<item><fieldid>#{key}</fieldid><value>#{value}</value></item>" }.join
+      
       xml = %Q[
         <xmlrequest>
           <username>#{@user}</username>
@@ -37,6 +40,9 @@ module Interspire
             <mailinglist>#{list_id}</mailinglist>
             <format>#{format}</format>
             <confirmed>#{confirmed}</confirmed>
+            <customfields>
+              #{custom_fields_xml}
+            </customfields>
           </details>
         </xmlrequest>
       ]

@@ -1,4 +1,4 @@
-# Interspire
+# Interspire [![Build Status](https://travis-ci.org/Oshuma/interspire.png?branch=master)](https://travis-ci.org/Oshuma/interspire)
 
 Ruby library for the {http://www.interspire.com/ Interspire} API ({https://www.interspire.com/support/kb/questions/1224/Email+Marketer+XML+API+Documentation pdf}).
 

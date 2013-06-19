@@ -80,6 +80,14 @@ describe Interspire::API do
       stub_request(:post, @api_url).to_return(:body => fixture("not_in_contact_list.xml"))
       @api.in_contact_list?(1, 'foo@example.com').should_not be_true
     end
+    
+    it 'should update the subscriber custom fields' do
+      stub_request(:post, @api_url).to_return(:body => fixture("update_subscriber_custom_fields.xml"))
+      # '1' is the (fake) contact ID
+      # '2' is the (fake) custom field ID
+      response = @api.update_subscriber_custom_field(1,2,"Jane")
+      response.should be_true
+    end
   end
 
 end

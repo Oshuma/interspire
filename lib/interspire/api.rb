@@ -196,6 +196,36 @@ module Interspire
         false
       end
     end
+    
+    # This is an undocumented API function.  Refer to the 'xml_updatesubscriber.php' attachment
+    # on this page: https://www.interspire.com/support/kb/questions/1217/Email+Marketer+XML+API+usage+and+examples
+    #
+    # @param subscriber_id [Integer] The ID of the subscriber.
+    # @param field_id [Integer] The ID of the custom field
+    # @param data [String] The data of the field
+    #
+    # @return [boolean] Returns +true+ if the field was updated.
+    def update_subscriber_custom_field(subscriber_id,field_id,data)
+      xml = %Q[
+        <xmlrequest>
+          <username>#{@username}</username>
+          <usertoken>#{@usertoken}</usertoken>
+          <requesttype>subscribers</requesttype>
+          <requestmethod>SaveSubscriberCustomField</requestmethod>
+        	<details>
+        		<subscriberids>
+        			<id>#{subscriber_id}</id>	
+        		</subscriberids>
+        		<fieldid>#{field_id}</fieldid>
+        		<data>#{data}</data>
+        	</details>
+        </xmlrequest>
+      ]
+
+      response = get_response(xml)
+      success?(response)
+    end
+    
 
     private
 

@@ -28,7 +28,7 @@ module Interspire
     # @return [Integer] Returns the subscriber's ID upon success.
     def add_subscriber(list_id, email, confirmed = false, format = 'html', custom_fields = {})
       custom_fields_xml = custom_fields.map { |key, value| "<item><fieldid>#{key}</fieldid><value>#{value}</value></item>" }.join
-      
+
       xml = %Q[
         <xmlrequest>
           <username>#{@user}</username>
@@ -174,7 +174,7 @@ module Interspire
     #
     # @return [boolean] +true+ or +false+ if the +email+ is on the given contact list.
     def in_contact_list?(list_id, email)
-      response = check_contact_list(list_id,email)
+      response = check_contact_list(list_id, email)
 
       if success?(response)
         # The 'data' element will contain the subscriber ID.
@@ -183,13 +183,13 @@ module Interspire
         false
       end
     end
-    
+
     # @param list_id [Integer] The ID of the contact list.
     # @param email [String] The subscriber's email address.
     #
     # @return [Integer] Returns the subscriber's ID upon success.
     def get_subscriber_id(list_id, email)
-      response = check_contact_list(list_id,email)
+      response = check_contact_list(list_id, email)
 
       if success?(response)
         response.xpath('response/data').first.content.to_i
@@ -197,7 +197,7 @@ module Interspire
         error!(response)
       end
     end
-    
+
     # This is an undocumented API function.  Refer to the 'xml_updatesubscriber.php' attachment
     # on this page: https://www.interspire.com/support/kb/questions/1217/Email+Marketer+XML+API+usage+and+examples
     #
@@ -206,27 +206,27 @@ module Interspire
     # @param data [String] The data of the field
     #
     # @return [boolean] Returns +true+ if the field was updated.
-    def update_subscriber_custom_field(subscriber_id,field_id,data)
+    def update_subscriber_custom_field(subscriber_id, field_id, data)
       xml = %Q[
         <xmlrequest>
           <username>#{@username}</username>
           <usertoken>#{@usertoken}</usertoken>
           <requesttype>subscribers</requesttype>
           <requestmethod>SaveSubscriberCustomField</requestmethod>
-        	<details>
-        		<subscriberids>
-        			<id>#{subscriber_id}</id>	
-        		</subscriberids>
-        		<fieldid>#{field_id}</fieldid>
-        		<data>#{data}</data>
-        	</details>
+          <details>
+            <subscriberids>
+              <id>#{subscriber_id}</id>
+            </subscriberids>
+            <fieldid>#{field_id}</fieldid>
+            <data>#{data}</data>
+          </details>
         </xmlrequest>
       ]
 
       response = get_response(xml)
       success?(response)
     end
-    
+
 
     private
 
@@ -258,7 +258,7 @@ module Interspire
       error = response.xpath('response/errormessage').first.content
       raise InterspireException, "#{type}: #{error.empty? ? 'No error message given.' : error}"
     end
-    
+
     def check_contact_list(list_id, email)
       xml = %Q[
         <xmlrequest>
@@ -273,8 +273,8 @@ module Interspire
         </xmlrequest>
       ]
 
-      response = get_response(xml)
+      get_response(xml)
     end
-    
+
   end
 end

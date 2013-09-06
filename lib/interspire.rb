@@ -4,5 +4,5 @@ require "interspire/interspire_exception"
 require "interspire/subscriber"
 
 module Interspire
-  VERSION = "0.1.1"
+  VERSION = "0.2.0"
 end

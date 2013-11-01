@@ -6,8 +6,11 @@ require 'interspire'
 Gem::Specification.new do |gem|
   gem.name          = "interspire"
   gem.version       = Interspire::VERSION
+  gem.license       = 'WTFPL'
+
   gem.authors       = ["Dale Campbell"]
   gem.email         = ["oshuma@gmail.com"]
+
   gem.description   = %q{Ruby library for the Interspire API.}
   gem.summary       = %q{Ruby library for the Interspire API.}
   gem.homepage      = "https://github.com/Oshuma/interspire"

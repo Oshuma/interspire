@@ -217,8 +217,8 @@ module Interspire
     def update_subscriber_custom_field(subscriber_id, field_id, data)
       xml = %Q[
         <xmlrequest>
-          <username>#{@username}</username>
-          <usertoken>#{@usertoken}</usertoken>
+          <username>#{@user}</username>
+          <usertoken>#{@token}</usertoken>
           <requesttype>subscribers</requesttype>
           <requestmethod>SaveSubscriberCustomField</requestmethod>
           <details>

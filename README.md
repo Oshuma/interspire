@@ -1,4 +1,4 @@
-# Interspire [![Build Status](https://travis-ci.org/Oshuma/interspire.png?branch=master)](https://travis-ci.org/Oshuma/interspire) [![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=3N885MZB7QCY6&lc=US&item_name=Dale%20Campbell&item_number=app_config&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted)
+# Interspire [![Build Status](https://travis-ci.org/Oshuma/interspire.png?branch=master)](https://travis-ci.org/Oshuma/interspire) [![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=3N885MZB7QCY6&lc=US&item_name=Dale%20Campbell&item_number=Interspire%20Ruby%20Library&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted)
 
 Ruby library for the [Interspire API](https://www.interspire.com/support/kb/questions/1224/Email+Marketer+XML+API+Documentation).
 
